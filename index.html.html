@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .status {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        .status.yes {
+            color: green;
+        }
+        .status.no {
+            color: red;
+        }
+        img {
+            max-width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Is the equipment working?</h1>
+    <!-- Replace "yes" with "no" to change the status -->
+    <div class="status yes" id="statusText">Yes</div>
+    <!-- Include a picture related to the status -->
+    <img id="statusImage" src="working.png" alt="Equipment Status">
+    <script>
+        // Example: You can add a script to dynamically change the status and image based on some condition
+        // var isWorking = someCondition(); // Replace someCondition with actual logic
+        var isWorking = true; // Static example
+        var statusText = document.getElementById('statusText');
+        var statusImage = document.getElementById('statusImage');
+
+        if (isWorking) {
+            statusText.className = 'status yes';
+            statusText.textContent = 'Yes';
+            statusImage.src = 'working.png';
+            statusImage.alt = 'Working';
+        } else {
+            statusText.className = 'status no';
+            statusText.textContent = 'No';
+            statusImage.src = 'not-working.png';
+            statusImage.alt = 'Not Working';
+        }
+    </script>
+</body>
+</html>
